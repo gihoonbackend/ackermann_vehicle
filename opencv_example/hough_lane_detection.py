@@ -48,7 +48,7 @@ def main():
     rospy.init_node('lane_detection_node')
 
     # 이미지 파일 경로 설정
-    image_path = rospy.get_param('~image_path', '/home/gihoon/catkin_ws/src/lane_detection/images/image.jpg')
+    image_path = rospy.get_param('~image_path', '/home/unicon3/catkin_ws/src/opencv_test/images/road1.jpg')
 
     # 이미지 처리 함수 호출
     process_image(image_path)

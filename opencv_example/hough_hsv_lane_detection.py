@@ -40,13 +40,13 @@ def process_image(image_path):
     hsv_image = cv2.cvtColor(masked_image, cv2.COLOR_BGR2HSV)
 
     # 3. 노란색 차선 필터링 (HSV 범위 설정)
-    yellow_lower = np.array([20, 100, 100])
-    yellow_upper = np.array([30, 255, 255])
+    yellow_lower = np.array([0, 0, 0])
+    yellow_upper = np.array([0, 0, 0])
     yellow_mask = cv2.inRange(hsv_image, yellow_lower, yellow_upper)
 
     # 4. 흰색 차선 필터링 (HSV 범위 설정)
-    white_lower = np.array([0, 0, 200])
-    white_upper = np.array([180, 25, 255])
+    white_lower = np.array([0, 0, 0])
+    white_upper = np.array([0, 0, 0])
     white_mask = cv2.inRange(hsv_image, white_lower, white_upper)
 
     # 5. 노란색과 흰색 마스크 결합
@@ -72,8 +72,7 @@ def main():
     rospy.init_node('lane_detection_hsv_node')
 
     # 이미지 파일 경로 설정
-    image_path = '/home/gihoon/catkin_ws/src/lane_detection/images/image.jpg'
-
+    image_path = '/home/unicon3/catkin_ws/src/opencv_test/images/road2.jpg'
     # 이미지 처리 함수 호출
     process_image(image_path)
 
