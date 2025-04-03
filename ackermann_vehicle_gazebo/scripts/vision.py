@@ -23,8 +23,8 @@ class Unicon_CV():
             upper_white = np.array([0, 0, 0])
 
             # Yellow mask HSV range
-            lower_yellow = np.array([20, 100, 100])
-            upper_yellow = np.array([30, 255, 255])
+            lower_yellow = np.array([0, 0, 0])
+            upper_yellow = np.array([0, 0, 0])
 
             mask_white = cv2.inRange(hsv, lower_white, upper_white)
             mask_yellow = cv2.inRange(hsv, lower_yellow, upper_yellow)
